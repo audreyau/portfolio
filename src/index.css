@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'Scratchy Lemon';
+  src: url('./fonts/ScratchyLemon.otf') format('opentype'),
+       url('./fonts/ScratchyLemon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text: #5a5550;
+  --text-light: #736b64;
+  --heading: #1a1714;
+  --bg: #faf8f5;
+  --bg-surface: #f2efeb;
+  --bg-card: #ffffff;
+  --accent: #846800;
+  --accent-glow: rgba(132, 104, 0, 0.1);
+  --border: #e5e0da;
+  --radius: 16px;
+
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --display: 'Scratchy Lemon', cursive;
+
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100svh;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #6b5400;
+}
+
+h1, h2, h3 {
+  color: var(--heading);
+  line-height: 1.2;
+}
+
+h1, h2 {
+  font-family: var(--display);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] {
+  --text: #b8b0a8;
+  --text-light: #8a8278;
+  --heading: #f0e8d8;
+  --bg: #141210;
+  --bg-surface: #1c1a17;
+  --bg-card: #201e1a;
+  --accent: #d4a500;
+  --accent-glow: rgba(212, 165, 0, 0.1);
+  --border: #2e2a25;
+}
+
+[data-theme="dark"] a:hover {
+  color: #e6b400;
+}
+
+[data-theme="dark"] .btn-primary {
+  background: #d4a500;
+  color: #141210;
+}
+[data-theme="dark"] .btn-primary:hover {
+  background: #e6b400;
+  color: #141210;
+}
+
+[data-theme="dark"] .btn-ghost {
+  border-color: #2e2a25;
+  color: #b8b0a8;
+}
+[data-theme="dark"] .btn-ghost:hover {
+  border-color: #d4a500;
+  color: #d4a500;
+}
+
