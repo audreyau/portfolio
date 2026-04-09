@@ -73,19 +73,19 @@ h1, h2 {
 
 /* Dark mode overrides */
 [data-theme="dark"] {
-  --text: #b8b0a8;
-  --text-light: #8a8278;
+  --text: #d6d4d2;
+  --text-light: #dcdcdc;
   --heading: #f0e8d8;
-  --bg: #141210;
-  --bg-surface: #1c1a17;
-  --bg-card: #201e1a;
-  --accent: #d4a500;
+  --bg: #181833;
+  --bg-surface: #16162d;
+  --bg-card: #171717;
+  --accent: #d7c26c;
   --accent-glow: rgba(212, 165, 0, 0.1);
-  --border: #2e2a25;
+  --border: #534a33;
 }
 
 [data-theme="dark"] a:hover {
-  color: #e6b400;
+  color: rgb(170, 142, 42);
 }
 
 [data-theme="dark"] .btn-primary {
@@ -99,7 +99,7 @@ h1, h2 {
 
 [data-theme="dark"] .btn-ghost {
   border-color: #2e2a25;
-  color: #b8b0a8;
+  color: #c1c1c1;
 }
 [data-theme="dark"] .btn-ghost:hover {
   border-color: #d4a500;

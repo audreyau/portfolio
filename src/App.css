@@ -168,6 +168,7 @@ nav {
   object-position: center 18%;
   cursor: pointer;
   transition: transform 0.2s ease;
+  filter: blur(0.1px);
 }
 
 .hero-avatar:hover {
@@ -247,7 +248,7 @@ nav {
 /* scroll indicator */
 .scroll-indicator {
   position: absolute;
-  bottom: 32px;
+  bottom: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -314,7 +315,8 @@ nav {
   width: 250px;
   height: auto;
   border-radius: var(--radius);
-  opacity: 0.9;
+  opacity: 0.95;
+  
 }
 
 .about-text-col h2 {
@@ -355,7 +357,7 @@ nav {
 }
 
 [data-theme="dark"] .fun-facts-card {
-  background: #3a3520;
+  background: #171717;
   color: #e5ddd0;
   box-shadow:
     2px 3px 12px rgba(0, 0, 0, 0.3),
@@ -422,7 +424,7 @@ nav {
 }
 
 [data-theme="dark"] .polaroid {
-  background: #2a2720;
+  background: #dfd8be;
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -451,6 +453,10 @@ nav {
   font-size: 0.7rem;
   color: var(--text-light);
   font-style: italic;
+}
+
+[data-theme="dark"] .polaroid-caption {
+  color: black;
 }
 
 .label {
@@ -882,11 +888,15 @@ nav {
 }
 
 [data-theme="dark"] .sticky-note {
-  background: #3a3520;
+  background: #171717;
   color: #e5ddd0;
   box-shadow:
     2px 3px 12px rgba(0, 0, 0, 0.3),
     0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .sticky-note .label {
+  color: #d7c26c;
 }
 
 .sticky-note .label {
@@ -982,7 +992,7 @@ footer {
   }
   .hero-avatar {
     width: 140px;
-    height: 140px;
+    height: auto;
   }
   .hero-cta {
     flex-direction: column;
