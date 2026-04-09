@@ -242,7 +242,7 @@ function App() {
                 I care about building technology that's intuitive, accessible, and fun to use.
               </p>
               <div className="about-buttons">
-                <a href="/resume.pdf" download className="btn btn-primary resume-btn">
+                <a href="./src/assets/AudreyEkstrom_Resume.pdf" download className="btn btn-primary resume-btn">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
                   </svg>
@@ -264,15 +264,21 @@ function App() {
                   </ul>
                   <div className="fun-facts-photos">
                     <div className="polaroid" style={{ transform: 'rotate(-3deg)' }}>
-                      <div className="polaroid-img placeholder-img">photo</div>
+                      <div className="polaroid-img placeholder-img">
+                        <img src='./src/assets/fun_photos/photo.png'/>
+                      </div>
                       <span className="polaroid-caption">My Photo</span>
                     </div>
                     <div className="polaroid" style={{ transform: 'rotate(2deg)' }}>
-                      <div className="polaroid-img placeholder-img">photo</div>
+                      <div className="polaroid-img placeholder-img">
+                        <img src='./src/assets/fun_photos/singapore.png'/>
+                      </div>
                       <span className="polaroid-caption">Singapore</span>
                     </div>
                     <div className="polaroid" style={{ transform: 'rotate(-1.5deg)' }}>
-                      <div className="polaroid-img placeholder-img">photo</div>
+                      <div className="polaroid-img placeholder-img">
+                        <img src='./src/assets/fun_photos/boba.png'/>
+                      </div>
                       <span className="polaroid-caption">Boba</span>
                     </div>
                   </div>

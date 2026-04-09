@@ -436,6 +436,13 @@ nav {
   display: block;
 }
 
+.polaroid-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .placeholder-img {
   background: var(--bg-surface);
   display: flex;
@@ -445,6 +452,7 @@ nav {
   color: var(--text-light);
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  
 }
 
 .polaroid-caption {

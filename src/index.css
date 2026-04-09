@@ -74,7 +74,7 @@ h1, h2 {
 /* Dark mode overrides */
 [data-theme="dark"] {
   --text: #d6d4d2;
-  --text-light: #dcdcdc;
+  --text-light: #ffffff;
   --heading: #f0e8d8;
   --bg: #181833;
   --bg-surface: #16162d;
