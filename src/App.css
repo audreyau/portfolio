@@ -156,14 +156,14 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: px;
   position: relative;
   z-index: 1;
 }
 
 .hero-avatar {
-  width: 280px;
-  height: 280px;
+  width: 255px;
+  height: auto;
   object-fit: cover;
   object-position: center 18%;
   cursor: pointer;
