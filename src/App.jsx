@@ -334,7 +334,7 @@ function App() {
                   <p>Explores how contextual factors shape users&rsquo; privacy concerns with smart-home IFTTT applets. Nudging users to consider usage context significantly raised their awareness of data-leakage risks.</p>
                   <div className="card-links">
                     <a href="https://doi.org/10.48550/arXiv.2012.12518" target="_blank" rel="noopener noreferrer">Read Paper &rarr;</a>
-                    <a href="https://doi.org/10.48550/arXiv.2012.12518" target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
+                    <a href="./src/assets/publications/pets22.pdf" target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
                     <button className="pub-collapse" onClick={(e) => e.target.closest('details').removeAttribute('open')}>&minus; Show less</button>
                   </div>
                 </div>
@@ -355,7 +355,7 @@ function App() {
                   <p>Identifies nine pain points data scientists face with computational notebooks through interviews and surveys, informing better tool design for the notebook workflow.</p>
                   <div className="card-links">
                     <a href="https://doi.org/10.1145/3313831.3376729" target="_blank" rel="noopener noreferrer">Read Paper &rarr;</a>
-                    <a href="https://doi.org/10.1145/3313831.3376729" target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
+                    <a href="./src/assets/publications/chi20.pdf" target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
                     <button className="pub-collapse" onClick={(e) => e.target.closest('details').removeAttribute('open')}>&minus; Show less</button>
                   </div>
                 </div>
@@ -376,7 +376,7 @@ function App() {
                   <p>A field study revealing that cognitive biases affect ~70% of reversed developer actions, yet existing tools offer little support for mitigating them.</p>
                   <div className="card-links">
                     <a href="https://doi.org/10.1145/3377811.3380330" target="_blank" rel="noopener noreferrer">Read Paper &rarr;</a>
-                    <a href="https://doi.org/10.1145/3377811.3380330" target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
+                    <a href="./src/assets/publications/icse20.pdf" target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
                     <button className="pub-collapse" onClick={(e) => e.target.closest('details').removeAttribute('open')}>&minus; Show less</button>
                   </div>
                 </div>
