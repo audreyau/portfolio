@@ -9,7 +9,7 @@ import cshellPreview from './assets/project_previews/cshell-preview.png'
 import skivisPreview from './assets/project_previews/skivis-preview.png'
 import './App.css'
 
-const ROLES = ['Software Engineer', 'Web Developer', 'Mobile Developer']
+const ROLES = ['Software Engineer', 'Web Developer', 'Mobile Developer', 'UX Designer', 'Site Reliability Engineer']
 
 const PROJECTS = [
   { num: '01', name: 'Deus', desc: 'Learn to read sheet music with real-time keyboard input and AI-powered feedback.', tags: ['React', 'Google Gemini API', 'Python'], color: '#e6b400', gitHub: 'https://github.com/bobtheblb/BeaverHacks2025.git', demo: 'https://devpost.com/software/deus', preview: deusPreview },
@@ -236,7 +236,7 @@ function App() {
                 <SquigglyUnderline />
               </div>
               <p>
-                I'm a software engineer with a focus onhuman-computer interaction. Now working as an Site Reliability Engineer at Nike, I focus on creating and maintaining dependable systems with thoughtful user experiences.
+                I'm a software engineer with a focus on human-computer interaction. Now working as an Site Reliability Engineer at Nike, I focus on creating and maintaining dependable systems with thoughtful user experiences.
               </p>
               <p>
                 I care about building technology that's intuitive, accessible, and fun to use.
@@ -267,7 +267,7 @@ function App() {
                       <div className="polaroid-img placeholder-img">
                         <img src='./src/assets/fun_photos/photo.png'/>
                       </div>
-                      <span className="polaroid-caption">My Photo</span>
+                      <span className="polaroid-caption">my dog, Ponyo</span>
                     </div>
                     <div className="polaroid" style={{ transform: 'rotate(2deg)' }}>
                       <div className="polaroid-img placeholder-img">
@@ -279,7 +279,7 @@ function App() {
                       <div className="polaroid-img placeholder-img">
                         <img src='./src/assets/fun_photos/boba.png'/>
                       </div>
-                      <span className="polaroid-caption">Boba</span>
+                      <span className="polaroid-caption">boba</span>
                     </div>
                   </div>
                 </div>
