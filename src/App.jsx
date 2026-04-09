@@ -1,17 +1,23 @@
 import { useEffect, useState, useRef, useCallback } from 'react'
-import avatar from './assets/avatar.png'
-import audreyAvatar from './assets/audrey-avatar.png'
+import avatar from './assets/avatars/avatar.png'
+import audreyAvatar from './assets/avatars/audrey-avatar.png'
+import lavenderPreview from './assets/project_previews/lavender-preview.png'
+import deusPreview from './assets/project_previews/deus-preview.png'
+import drobePreview from './assets/project_previews/drobe-preview.png'
+import flavorFlickPreview from './assets/project_previews/flavorflick-preview.png'
+import cshellPreview from './assets/project_previews/cshell-preview.png'
+import skivisPreview from './assets/project_previews/skivis-preview.png'
 import './App.css'
 
 const ROLES = ['Software Engineer', 'Web Developer', 'Mobile Developer']
 
 const PROJECTS = [
-  { num: '01', name: 'Deus', desc: 'Learn to read sheet music with real-time keyboard input and AI-powered feedback.', tags: ['React', 'Google Gemini API', 'Python'], color: '#e6b400', gitHub: 'https://github.com/bobtheblb/BeaverHacks2025.git', demo: 'https://devpost.com/software/deus' },
-  { num: '02', name: 'Lavender', desc: 'Personalized sleep scheduling for shift workers, informed by sleep psychology.', tags: ['React/Vite', 'Firebase', 'Python'], color: '#9a7abf', gitHub: 'https://lavender-sleep.web.app/', demo: 'https://youtu.be/MoNmyTLVFZQ?si' },
-  { num: '03', name: 'Drobe', desc: 'A virtual wardrobe app for documenting clothes and planning outfits.', tags: ['Swift', 'iOS'], color: '#6b9e6b', gitHub: 'https://github.com/audreyau/drobe.git', demo: 'https://youtu.be/6Ku9Wr-2rjE' },
-  { num: '04', name: 'Flavor Flick', desc: 'Discover, save, and reflect on recipes you love.', tags: ['Kotlin', 'Android'], color: '#c47a5a', gitHub: 'https://github.com/audreyau/flavor-flick', demo: 'https://youtu.be/ED4aGWo4c3w' },
-  { num: '05', name: 'C Shell', desc: 'A Unix shell with background processes, I/O redirection, and signal handling.', tags: ['C', 'Linux'], color: '#5a8fa8', gitHub: 'https://github.com/audreyau/c-shell', demo: '' },
-  { num: '06', name: 'SkiVis', desc: 'Visualize and compare ski routes by altitude and steepness', tags: ['C++', 'OpenGL', 'Python'], color: '#d4a500', gitHub: 'https://github.com/audreyau/ski-vis', demo: '' }
+  { num: '01', name: 'Deus', desc: 'Learn to read sheet music with real-time keyboard input and AI-powered feedback.', tags: ['React', 'Google Gemini API', 'Python'], color: '#e6b400', gitHub: 'https://github.com/bobtheblb/BeaverHacks2025.git', demo: 'https://devpost.com/software/deus', preview: deusPreview },
+  { num: '02', name: 'Lavender', desc: 'Personalized sleep scheduling for shift workers, informed by sleep psychology.', tags: ['React/Vite', 'Firebase', 'Python'], color: '#9a7abf', gitHub: 'https://lavender-sleep.web.app/', demo: 'https://youtu.be/MoNmyTLVFZQ?si', preview: lavenderPreview },
+  { num: '03', name: 'Drobe', desc: 'A virtual wardrobe app for documenting clothes and planning outfits.', tags: ['Swift', 'iOS'], color: '#6b9e6b', gitHub: 'https://github.com/audreyau/drobe.git', demo: 'https://youtu.be/6Ku9Wr-2rjE', preview: drobePreview },
+  { num: '04', name: 'Flavor Flick', desc: 'Discover, save, and reflect on recipes you love.', tags: ['Kotlin', 'Android'], color: '#c47a5a', gitHub: 'https://github.com/audreyau/flavor-flick', demo: 'https://youtu.be/qi3vKYFcO2Q', preview: flavorFlickPreview },
+  { num: '05', name: 'C Shell', desc: 'A Unix shell with background processes, I/O redirection, and signal handling.', tags: ['C', 'Linux'], color: '#5a8fa8', gitHub: 'https://github.com/audreyau/c-shell', demo: 'https://youtu.be/T_QET5XHWoo', preview: cshellPreview },
+  { num: '06', name: 'SkiVis', desc: 'Visualize and compare ski routes by altitude and steepness', tags: ['C++', 'OpenGL', 'Python'], color: '#d4a500', gitHub: 'https://github.com/audreyau/ski-vis', demo: 'https://youtu.be/9SPgaPU7nbM', preview: skivisPreview }
 ]
 
 function SquigglyUnderline() {
@@ -288,13 +294,8 @@ function App() {
           <div className="project-grid">
             {PROJECTS.map((p) => (
               <article className="project-card" key={p.num}>
-                <div className="card-preview" style={{ background: `linear-gradient(135deg, ${p.color}30, ${p.color}10)` }}>
-                  <span className="preview-placeholder">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" />
-                    </svg>
-                    Preview
-                  </span>
+                <div className="card-preview">
+                  <img src={p.preview} alt="Project Preview" />
                 </div>
                 <div className="card-body">
                   <div className="card-number">{p.num}</div>
