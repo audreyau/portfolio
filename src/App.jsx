@@ -73,7 +73,7 @@ const SKILLS = [
   }
 ]
 
-const ABOUT_AVATARS = [audreyAvatar, schoolAvatar, headshotAvatar]
+// const ABOUT_AVATARS = [audreyAvatar, schoolAvatar, headshotAvatar]
 
 function SquigglyUnderline() {
   return (
@@ -328,8 +328,8 @@ function App() {
         <div className="container">
           <div className="about-grid">
             <div className="about-avatar-col">
-              {/* <img src={audreyAvatar} alt="" className="about-avatar" /> */}
-              <div
+              <img src={schoolAvatar} alt="" className="about-avatar" />
+              {/* <div
                 className="about-avatar-wrapper"
                 onClick={() => setAvatarIdx((i) => (i + 1) % ABOUT_AVATARS.length)}
                 title="Click to see more photos"
@@ -340,7 +340,7 @@ function App() {
                   className="about-avatar" 
                   key={avatarIdx}
                 />
-              </div>
+              </div> */}
             </div>
             <div className="about-text-col">
               <p className="label">About me</p>
