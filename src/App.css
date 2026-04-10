@@ -54,15 +54,12 @@
     align-items: center;
     padding: 12px 40px;
     z-index: 100;
-    background: rgba(250, 248, 245, 0.55);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    /* background: rgba(250, 248, 245, 0.55);
+    backdrop-filter: blur(20px); */
+    /* -webkit-backdrop-filter: blur(14px); */
     transition: background 0.4s ease;
   }
   
-  [data-theme=dark] nav {
-    background: rgba(24, 24, 51, 0.55);
-  }
   
   a.logo {
     font-family: var(--display);
