@@ -1,6 +1,11 @@
 import { useEffect, useState, useRef, useCallback } from 'react'
 import avatar from './assets/avatars/avatar.png'
 import audreyAvatar from './assets/avatars/audrey-avatar.png'
+import nikeAvatar from './assets/avatars/nike-avatar.png'
+import laptopAvatar from './assets/avatars/laptop-avatar.png'
+import headshotAvatar from './assets/avatars/headshot-avatar.png'
+import schoolAvatar from './assets/avatars/school-avatar.png'
+
 import lavenderPreview from './assets/project_previews/lavender-preview.png'
 import deusPreview from './assets/project_previews/deus-preview.png'
 import drobePreview from './assets/project_previews/drobe-preview.png'
@@ -46,7 +51,7 @@ const SKILLS = [
         <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
       </svg>
     ),
-    items: ['React', 'Vue', 'Angular', 'Svelte', 'HTML', 'CSS', 'JavaScript']
+    items: ['React', 'Vite', 'HTML', 'CSS', 'JavaScript', 'Node.js']
   },
   {
     category: 'Backend & Cloud',
@@ -55,7 +60,7 @@ const SKILLS = [
         <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/>
       </svg>
     ),
-    items: ['AWS', 'Firebase', 'Apache Airflow', 'Linux']
+    items: ['AWS', 'Firebase', 'Apache Airflow', 'Docker', 'Node.js', 'Linux']
   },
   {
     category: 'Tools & Observability',
@@ -64,9 +69,11 @@ const SKILLS = [
         <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
       </svg>
     ),
-    items: ['Splunk/SignalFX', 'New Relic', 'Git', ' Figma']
+    items: ['Splunk/SignalFX', 'New Relic', 'Git', 'Jenkins Pipeline','Cypress', 'Jest', 'Figma']
   }
 ]
+
+const ABOUT_AVATARS = [audreyAvatar, schoolAvatar, headshotAvatar]
 
 function SquigglyUnderline() {
   return (
@@ -81,6 +88,9 @@ function App() {
   const [showCursor, setShowCursor] = useState(true)
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark')
   const [funFacts, setFunFacts] = useState(false)
+  const [activeSection, setActiveSection] = useState('hero')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [avatarIdx, setAvatarIdx] = useState(0)
   const cursorRef = useRef(null)
   const canvasRef = useRef(null)
 
@@ -88,6 +98,36 @@ function App() {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
     localStorage.setItem('theme', darkMode ? 'dark' : 'light')
   }, [darkMode])
+
+  useEffect(() => {
+    const ids = ['hero', 'about', 'projects', 'experience', 'contact']
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id)
+        })
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    )
+    ids.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const fadeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible')
+        })
+      },
+      { threshold: 0.08 }
+    )
+    document.querySelectorAll('.fade-in').forEach((el) => fadeObserver.observe(el))
+    return () => fadeObserver.disconnect()
+  }, [])
 
   // Typed intro effect — cycles through ROLES
   useEffect(() => {
@@ -210,33 +250,46 @@ function App() {
       <canvas ref={canvasRef} className="confetti-canvas" aria-hidden="true" />
 
       <nav>
-          <span className="logo">AE</span>
-          <div className="nav-links">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-            <button
-              className="theme-toggle"
-              onClick={() => setDarkMode((d) => !d)}
-              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+        <a href="#hero" className="logo" onClick={() => setMobileMenuOpen(false)}>AE</a>
+        <button
+          className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}
+          onClick={() => setMobileMenuOpen((v) => !v)}
+          aria-label="Toggle navigation menu"
+        >
+          <span /><span /><span />
+        </button>
+        <div className={`nav-links ${mobileMenuOpen ? 'nav-open' : ''}`}>
+          {['about', 'projects', 'experience', 'contact'].map((id) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              className={activeSection === id ? 'nav-active' : ''}
+              onClick={() => setMobileMenuOpen(false)}
             >
-              {darkMode ? (
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <circle cx="12" cy="12" r="5" />
-                  <line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                  <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </svg>
-              ) : (
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-                </svg>
-              )}
-            </button>
-          </div>
-        </nav>
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </a>
+          ))}
+          <button
+            className="theme-toggle"
+            onClick={() => setDarkMode((d) => !d)}
+            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {darkMode ? (
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+            ) : (
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </nav>
 
       <section id="hero">
         <div className="hero-stars" aria-hidden="true">
@@ -271,11 +324,23 @@ function App() {
         </div>
       </section>
 
-      <section id="about">
+      <section id="about" className="fade-in">
         <div className="container">
           <div className="about-grid">
             <div className="about-avatar-col">
-              <img src={audreyAvatar} alt="" className="about-avatar" />
+              {/* <img src={audreyAvatar} alt="" className="about-avatar" /> */}
+              <div
+                className="about-avatar-wrapper"
+                onClick={() => setAvatarIdx((i) => (i + 1) % ABOUT_AVATARS.length)}
+                title="Click to see more photos"
+              >
+                <img 
+                  src={ABOUT_AVATARS[avatarIdx]} 
+                  alt="Audrey Ekstrom" 
+                  className="about-avatar" 
+                  key={avatarIdx}
+                />
+              </div>
             </div>
             <div className="about-text-col">
               <p className="label">About me</p>
@@ -313,19 +378,19 @@ function App() {
                   <div className="fun-facts-photos">
                     <div className="polaroid" style={{ transform: 'rotate(-3deg)' }}>
                       <div className="polaroid-img placeholder-img">
-                        <img src={ponyo} />
+                        <img src={ponyo} alt="My dog, Ponyo" />
                       </div>
                       <span className="polaroid-caption">my dog, Ponyo</span>
                     </div>
                     <div className="polaroid" style={{ transform: 'rotate(2deg)' }}>
                       <div className="polaroid-img placeholder-img">
-                        <img src={singapore} />
+                        <img src={singapore} alt="Singapore trip" />
                       </div>
                       <span className="polaroid-caption">Singapore</span>
                     </div>
                     <div className="polaroid" style={{ transform: 'rotate(-1.5deg)' }}>
                       <div className="polaroid-img placeholder-img">
-                        <img src={boba} />
+                        <img src={boba} alt="Boba tea" />
                       </div>
                       <span className="polaroid-caption">boba</span>
                     </div>
@@ -339,7 +404,7 @@ function App() {
         </div>
       </section>
 
-      <section id="projects">
+      <section id="projects" className="fade-in">
         <div className="container">
           <p className="label">Projects</p>
           <div className="heading-with-underline">
@@ -442,7 +507,7 @@ function App() {
         </div>
       </section>
 
-      <section id="experience">
+      <section id="experience" className="fade-in">
         <div className="container">
           <p className="label">Experience</p>
           <div className="heading-with-underline">
@@ -554,7 +619,7 @@ function App() {
         </div>
       </section>
 
-      <section id="contact">
+      <section id="contact" className="fade-in">
         <div className="container">
           <div className="sticky-note">
             <div className="sticky-tape" aria-hidden="true" />
