@@ -45,20 +45,28 @@
    NAV
    ========================================================== */
 nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 40px;
-  z-index: 10;
+  padding: 12px 40px;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: background 0.4s ease;
+}
+
+[data-theme=dark] nav {
+  background: rgba(24, 24, 51, 0.55);
 }
 
 .logo {
   font-family: var(--display);
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   color: var(--heading);
   letter-spacing: 0.04em;
 }
@@ -66,8 +74,8 @@ nav {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
-  font-size: 0.88rem;
+  gap: 28px;
+  font-size: 0.82rem;
   letter-spacing: 0.03em;
 }
 
@@ -85,8 +93,8 @@ nav {
   background: none;
   border: 1px solid var(--border);
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -112,7 +120,7 @@ nav {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 100px 32px 60px;
+  padding: 80px 32px 60px;
   background:
     radial-gradient(ellipse at 50% 30%, var(--accent-glow) 0%, transparent 60%),
     var(--bg);
