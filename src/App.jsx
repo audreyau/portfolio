@@ -7,17 +7,65 @@ import drobePreview from './assets/project_previews/drobe-preview.png'
 import flavorFlickPreview from './assets/project_previews/flavorflick-preview.png'
 import cshellPreview from './assets/project_previews/cshell-preview.png'
 import skivisPreview from './assets/project_previews/skivis-preview.png'
+import resume from './assets/AudreyEkstrom_Resume.pdf'
+import chi20 from './assets/publications/chi20.pdf'
+import icse20 from './assets/publications/icse20.pdf'
+import pets22 from './assets/publications/pets22.pdf'
+import ponyo from './assets/fun_photos/photo.png'
+import singapore from './assets/fun_photos/boba.png'
+import boba from './assets/fun_photos/singapore.png'
+
+
 import './App.css'
 
 const ROLES = ['Software Engineer', 'Web Developer', 'Mobile Developer', 'UX Designer', 'Site Reliability Engineer']
 
 const PROJECTS = [
   { num: '01', name: 'Deus', desc: 'Learn to read sheet music with real-time keyboard input and AI-powered feedback.', tags: ['React', 'Google Gemini API', 'Python'], color: '#e6b400', gitHub: 'https://github.com/bobtheblb/BeaverHacks2025.git', demo: 'https://devpost.com/software/deus', preview: deusPreview },
-  { num: '02', name: 'Lavender', desc: 'Personalized sleep scheduling for shift workers, informed by sleep psychology.', tags: ['React/Vite', 'Firebase', 'Python'], color: '#9a7abf', gitHub: 'https://lavender-sleep.web.app/', demo: 'https://youtu.be/MoNmyTLVFZQ?si', preview: lavenderPreview },
+  { num: '02', name: 'Lavender', desc: 'Personalized sleep scheduling for shift workers, informed by sleep psychology.', tags: ['React/Vite', 'Firebase', 'Python'], color: '#9a7abf', gitHub: 'https://lavender-app.github.io/lavender/', demo: 'https://youtu.be/MoNmyTLVFZQ?si', preview: lavenderPreview },
   { num: '03', name: 'Drobe', desc: 'A virtual wardrobe app for documenting clothes and planning outfits.', tags: ['Swift', 'iOS'], color: '#6b9e6b', gitHub: 'https://github.com/audreyau/drobe.git', demo: 'https://youtu.be/6Ku9Wr-2rjE', preview: drobePreview },
   { num: '04', name: 'Flavor Flick', desc: 'Discover, save, and reflect on recipes you love.', tags: ['Kotlin', 'Android'], color: '#c47a5a', gitHub: 'https://github.com/audreyau/flavor-flick', demo: 'https://youtu.be/qi3vKYFcO2Q', preview: flavorFlickPreview },
   { num: '05', name: 'C Shell', desc: 'A Unix shell with background processes, I/O redirection, and signal handling.', tags: ['C', 'Linux'], color: '#5a8fa8', gitHub: 'https://github.com/audreyau/c-shell', demo: 'https://youtu.be/T_QET5XHWoo', preview: cshellPreview },
   { num: '06', name: 'SkiVis', desc: 'Visualize and compare ski routes by altitude and steepness', tags: ['C++', 'OpenGL', 'Python'], color: '#d4a500', gitHub: 'https://github.com/audreyau/ski-vis', demo: 'https://youtu.be/9SPgaPU7nbM', preview: skivisPreview }
+]
+
+const SKILLS = [
+  {
+    category: 'Languages',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
+      </svg>
+    ),
+    items: ['Python', 'JavaScript', 'TypeScript', 'C/C++', 'Kotlin', 'Swift', 'Haskell', 'MASM', 'SQL']
+  },
+  {
+    category: 'Frontend',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
+      </svg>
+    ),
+    items: ['React', 'Vue', 'Angular', 'Svelte', 'HTML', 'CSS', 'JavaScript']
+  },
+  {
+    category: 'Backend & Cloud',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/>
+      </svg>
+    ),
+    items: ['AWS', 'Firebase', 'Apache Airflow', 'Linux']
+  },
+  {
+    category: 'Tools & Observability',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+      </svg>
+    ),
+    items: ['Splunk/SignalFX', 'New Relic', 'Git', ' Figma']
+  }
 ]
 
 function SquigglyUnderline() {
@@ -242,7 +290,7 @@ function App() {
                 I care about building technology that's intuitive, accessible, and fun to use.
               </p>
               <div className="about-buttons">
-                <a href="./src/assets/AudreyEkstrom_Resume.pdf" download className="btn btn-primary resume-btn">
+                <a href={resume} download className="btn btn-primary resume-btn">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
                   </svg>
@@ -257,33 +305,35 @@ function App() {
                 <div className="fun-facts-card">
                   <div className="fun-facts-tape" aria-hidden="true" />
                   <ul>
-                    <li>I play guitar and sing &mdash; music helps me think through tricky problems</li>
-                    <li>Recently picked up photography &mdash; I love capturing light and composition</li>
-                    <li>Favorite place I've traveled: Singapore (the food alone is worth it)</li>
                     <li>Former bobarista &mdash; I can still make a mean taro milk tea</li>
+                    <li>I play guitar and sing</li>
+                    <li>Recently picked up photography</li>
+                    <li>Favorite place I've traveled: Singapore</li>
                   </ul>
                   <div className="fun-facts-photos">
                     <div className="polaroid" style={{ transform: 'rotate(-3deg)' }}>
                       <div className="polaroid-img placeholder-img">
-                        <img src='./src/assets/fun_photos/photo.png'/>
+                        <img src={ponyo} />
                       </div>
                       <span className="polaroid-caption">my dog, Ponyo</span>
                     </div>
                     <div className="polaroid" style={{ transform: 'rotate(2deg)' }}>
                       <div className="polaroid-img placeholder-img">
-                        <img src='./src/assets/fun_photos/singapore.png'/>
+                        <img src={singapore} />
                       </div>
                       <span className="polaroid-caption">Singapore</span>
                     </div>
                     <div className="polaroid" style={{ transform: 'rotate(-1.5deg)' }}>
                       <div className="polaroid-img placeholder-img">
-                        <img src='./src/assets/fun_photos/boba.png'/>
+                        <img src={boba} />
                       </div>
                       <span className="polaroid-caption">boba</span>
                     </div>
                   </div>
                 </div>
               )}
+
+
             </div>
           </div>
         </div>
@@ -340,7 +390,7 @@ function App() {
                   <p>Explores how contextual factors shape users&rsquo; privacy concerns with smart-home IFTTT applets. Nudging users to consider usage context significantly raised their awareness of data-leakage risks.</p>
                   <div className="card-links">
                     <a href="https://doi.org/10.48550/arXiv.2012.12518" target="_blank" rel="noopener noreferrer">Read Paper &rarr;</a>
-                    <a href="./src/assets/publications/pets22.pdf" target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
+                    <a href={pets22} target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
                     <button className="pub-collapse" onClick={(e) => e.target.closest('details').removeAttribute('open')}>&minus; Show less</button>
                   </div>
                 </div>
@@ -361,7 +411,7 @@ function App() {
                   <p>Identifies nine pain points data scientists face with computational notebooks through interviews and surveys, informing better tool design for the notebook workflow.</p>
                   <div className="card-links">
                     <a href="https://doi.org/10.1145/3313831.3376729" target="_blank" rel="noopener noreferrer">Read Paper &rarr;</a>
-                    <a href="./src/assets/publications/chi20.pdf" target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
+                    <a href={chi20} target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
                     <button className="pub-collapse" onClick={(e) => e.target.closest('details').removeAttribute('open')}>&minus; Show less</button>
                   </div>
                 </div>
@@ -382,7 +432,7 @@ function App() {
                   <p>A field study revealing that cognitive biases affect ~70% of reversed developer actions, yet existing tools offer little support for mitigating them.</p>
                   <div className="card-links">
                     <a href="https://doi.org/10.1145/3377811.3380330" target="_blank" rel="noopener noreferrer">Read Paper &rarr;</a>
-                    <a href="./src/assets/publications/icse20.pdf" target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
+                    <a href={icse20}target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
                     <button className="pub-collapse" onClick={(e) => e.target.closest('details').removeAttribute('open')}>&minus; Show less</button>
                   </div>
                 </div>
@@ -468,8 +518,39 @@ function App() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="skills-block"> 
+            <p className="label">Tech Stack</p>
+            <div className="heading-with-underline">
+              <h2 className="section-title">Tools I work with.</h2>
+              <SquigglyUnderline />
+            </div>
+
+            <div className="skills-grid">
+              {SKILLS.map((group) => (
+                <div className="skills-category" key={group.category}>
+                  <div className="skills-category-header">
+                    <span className="skills-icon">{group.icon}</span>
+                    <h3>{group.category}</h3>
+                  </div>
+                  <div className="skills-items">
+                    {group.items.map((skill) => (
+                      <span className="skill-chip" key={skill}>{skill}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
 
           </div>
+
+          {/* <div style={{marginTop: '3rem', display: 'flex', justifyContent: 'center', flexWrap: 'wrap'}}>
+            <img src="./src/assets/avatars/school-avatar.png" style={{width: '200px', height: 'auto'}} /> 
+            <img src="./src/assets/avatars/nike-audrey.png" style={{width: '200px', height: 'auto'}} /> 
+            <img src="./src/assets/avatars/test.png" style={{width: '200px', height: 'auto'}} /> 
+          </div> */}
+
         </div>
       </section>
 

@@ -168,7 +168,7 @@ nav {
   object-position: center 18%;
   cursor: pointer;
   transition: transform 0.2s ease;
-  filter: blur(0.1px);
+  /* filter: blur(0.1px); */
 }
 
 .hero-avatar:hover {
@@ -315,7 +315,7 @@ nav {
   width: 250px;
   height: auto;
   border-radius: var(--radius);
-  opacity: 0.95;
+  opacity: 0.9;
   
 }
 
@@ -357,8 +357,8 @@ nav {
 }
 
 [data-theme="dark"] .fun-facts-card {
-  background: #171717;
-  color: #e5ddd0;
+  background: #1a2640;
+  color: #d0d8e8;
   box-shadow:
     2px 3px 12px rgba(0, 0, 0, 0.3),
     0 1px 3px rgba(0, 0, 0, 0.2);
@@ -424,7 +424,7 @@ nav {
 }
 
 [data-theme="dark"] .polaroid {
-  background: #dfd8be;
+  background: var(--bg);
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -464,7 +464,7 @@ nav {
 }
 
 [data-theme="dark"] .polaroid-caption {
-  color: black;
+  color: white;
 }
 
 .label {
@@ -473,6 +473,85 @@ nav {
   letter-spacing: 0.18em;
   color: var(--accent);
   margin-bottom: 8px;
+}
+
+
+/* ==========================================================
+   SKILLS — TECH STACK
+   ========================================================== */
+
+.skills-block {
+  margin-top: 72px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.skills-category {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  padding: 28px;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.skills-category:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
+}
+
+.skills-category-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.skills-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--accent-glow);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.skills-category h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.skills-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-chip {
+  display: inline-block;
+  padding: 5px 14px;
+  font-size: 0.78rem;
+  font-weight: 500; 
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  background: var(--bg-surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.skill-chip:hover {
+  background: var(--accent-glow);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* ==========================================================
@@ -896,8 +975,8 @@ nav {
 }
 
 [data-theme="dark"] .sticky-note {
-  background: #171717;
-  color: #e5ddd0;
+  background: #1a2640;
+  color: #d0d8e8;
   box-shadow:
     2px 3px 12px rgba(0, 0, 0, 0.3),
     0 1px 3px rgba(0, 0, 0, 0.2);
