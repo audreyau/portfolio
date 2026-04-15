@@ -1,9 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react'
 import avatar from './assets/avatars/avatar.png'
-import audreyAvatar from './assets/avatars/audrey-avatar.png'
-import nikeAvatar from './assets/avatars/nike-avatar.png'
-import laptopAvatar from './assets/avatars/laptop-avatar.png'
-import headshotAvatar from './assets/avatars/headshot-avatar.png'
 import schoolAvatar from './assets/avatars/school-avatar.png'
 
 import lavenderPreview from './assets/project_previews/lavender-preview.png'
@@ -17,8 +13,8 @@ import chi20 from './assets/publications/chi20.pdf'
 import icse20 from './assets/publications/icse20.pdf'
 import pets22 from './assets/publications/pets22.pdf'
 import ponyo from './assets/fun_photos/photo.png'
-import singapore from './assets/fun_photos/boba.png'
-import boba from './assets/fun_photos/singapore.png'
+import singapore from './assets/fun_photos/singapore.png'
+import boba from './assets/fun_photos/boba.png'
 
 
 import './App.css'
