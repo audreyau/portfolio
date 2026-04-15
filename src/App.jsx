@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react'
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import avatar from './assets/avatars/avatar.png'
 import schoolAvatar from './assets/avatars/school-avatar.png'
 
@@ -366,8 +367,8 @@ function App() {
                 <div className="fun-facts-card">
                   <div className="fun-facts-tape" aria-hidden="true" />
                   <ul>
-                    <li>Former bobarista &mdash; I can still make a mean taro milk tea</li>
-                    <li>I play guitar and sing</li>
+                    <li>Former boba barista and hobbyist bartender</li>
+                    {/* <li>I play guitar and sing</li> */}
                     <li>Recently picked up photography</li>
                     <li>Favorite place I've traveled: Singapore</li>
                   </ul>
@@ -629,9 +630,9 @@ function App() {
             </p>
             <a href="mailto:audrey.wingkei.ekstrom@gmail.com" className="btn btn-primary">Say hello</a>
             <div className="social-row">
-              <a href="https://github.com/audreyau" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://github.com/audreyau" target="_blank" rel="noopener noreferrer"><FaGithub/>GitHub</a>
               <span className="dot" />
-              <a href="https://linkedin.com/in/audreyekstrom" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://linkedin.com/in/audreyekstrom" target="_blank" rel="noopener noreferrer"><FaLinkedin/>LinkedIn</a>
             </div>
           </div>
         </div>

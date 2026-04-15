@@ -1011,6 +1011,12 @@
     padding: 100px 0;
   }
   
+  .social-row a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
   .sticky-note {
     position: relative;
     max-width: 500px;
@@ -1179,6 +1185,9 @@
     .about-text-col h2 {
       font-size: 1.8rem;
       font-weight: 500;
+    }
+    .about-buttons {
+      justify-content: center;
     }
   
     .section-title {
