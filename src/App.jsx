@@ -13,6 +13,7 @@ import resume from './assets/AudreyEkstrom_Resume.pdf'
 import chi20 from './assets/publications/chi20.pdf'
 import icse20 from './assets/publications/icse20.pdf'
 import pets22 from './assets/publications/pets22.pdf'
+import osu23 from './assets/publications/osu23.pdf'
 import ponyo from './assets/fun_photos/photo.png'
 import singapore from './assets/fun_photos/singapore.png'
 import boba from './assets/fun_photos/boba.png'
@@ -439,8 +440,24 @@ function App() {
               <SquigglyUnderline />
             </div>
 
-
             <div className="pub-list">
+              <details className="pub-card">
+                <summary>
+                  <h3>Studying the Effectiveness of Different Image Filters in Balancing Usability and Privacy</h3>
+                  <p className="pub-venue">Masters Thesis at Oregon State University (OSU), 2023</p>
+                </summary>
+                <div className="pub-details">
+                  <hr className="pub-divider" />
+                  <p className="pub-authors">Ellis, Brandon &middot; <span className="pub-role">Acknowledged Contributor</span></p>
+                  <p>Evaluates image filters for balancing privacy and usability in cloud photo storage. Finds that oilify and newsprint provide stronger privacy than pixelize, with oilify offering the best overall user experience.</p>
+                  <div className="card-links">
+                    <a href="https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/x059ch095" target="_blank" rel="noopener noreferrer">Read Paper &rarr;</a>
+                    <a href={osu23} target="_blank" rel="noopener noreferrer" download>Download PDF &rarr;</a>
+                    <button className="pub-collapse" onClick={(e) => e.target.closest('details').removeAttribute('open')}>&minus; Show less</button>
+                  </div>
+                </div>
+              </details>
+
               <details className="pub-card">
                 <summary>
                   <h3>If This Context Then That Concern: Exploring Users&rsquo; Concerns with IFTTT Applets</h3>
