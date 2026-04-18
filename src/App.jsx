@@ -9,6 +9,9 @@ import drobePreview from './assets/project_previews/drobe-preview.png'
 import flavorFlickPreview from './assets/project_previews/flavorflick-preview.png'
 import cshellPreview from './assets/project_previews/cshell-preview.png'
 import skivisPreview from './assets/project_previews/skivis-preview.png'
+import fishPreview from './assets/project_previews/fish-preview.png'
+import dailyDigestPreview from './assets/project_previews/dailydigest-preview.png'
+import ezXpirationPreview from './assets/project_previews/ezxpiration-preview.png'
 import resume from './assets/AudreyEkstrom_Resume.pdf'
 import chi20 from './assets/publications/chi20.pdf'
 import icse20 from './assets/publications/icse20.pdf'
@@ -23,13 +26,48 @@ import './App.css'
 
 const ROLES = ['Software Engineer', 'Web Developer', 'Mobile Developer', 'UX Designer', 'Site Reliability Engineer']
 
+const CATEGORIES = [
+  { id: 'all', label: 'All', icon: (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+    </svg>
+  )},
+  { id: 'web', label: 'Web', icon: (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+  )},
+  { id: 'mobile', label: 'Mobile', icon: (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+    </svg>
+  )},
+  { id: 'systems', label: 'Systems', icon: (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+    </svg>
+  )},
+  { id: 'graphics', label: 'Graphics', icon: (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2"/>
+      <path d="M6 12l3-3 3 3 4-4 2 2"/>
+      <line x1="8" y1="21" x2="16" y2="21"/>
+      <line x1="12" y1="17" x2="12" y2="21"/>
+    </svg>
+
+  )},
+]
+
 const PROJECTS = [
-  { num: '01', name: 'Deus', desc: 'Learn to read sheet music with real-time keyboard input and AI-powered feedback.', tags: ['React', 'Google Gemini API', 'Python'], color: '#e6b400', gitHub: 'https://github.com/bobtheblb/BeaverHacks2025.git', demo: 'https://devpost.com/software/deus', preview: deusPreview },
-  { num: '02', name: 'Lavender', desc: 'Personalized sleep scheduling for shift workers, informed by sleep psychology.', tags: ['React/Vite', 'Firebase', 'Python'], color: '#9a7abf', gitHub: 'https://lavender-app.github.io/lavender/', demo: 'https://youtu.be/MoNmyTLVFZQ?si', preview: lavenderPreview },
-  { num: '03', name: 'Drobe', desc: 'A virtual wardrobe app for documenting clothes and planning outfits.', tags: ['Swift', 'iOS'], color: '#6b9e6b', gitHub: 'https://github.com/audreyau/drobe.git', demo: 'https://youtu.be/6Ku9Wr-2rjE', preview: drobePreview },
-  { num: '04', name: 'Flavor Flick', desc: 'Discover, save, and reflect on recipes you love.', tags: ['Kotlin', 'Android'], color: '#c47a5a', gitHub: 'https://github.com/audreyau/flavor-flick', demo: 'https://youtu.be/qi3vKYFcO2Q', preview: flavorFlickPreview },
-  { num: '05', name: 'C Shell', desc: 'A Unix shell with background processes, I/O redirection, and signal handling.', tags: ['C', 'Linux'], color: '#5a8fa8', gitHub: 'https://github.com/audreyau/c-shell', demo: 'https://youtu.be/T_QET5XHWoo', preview: cshellPreview },
-  { num: '06', name: 'SkiVis', desc: 'Visualize and compare ski routes by altitude and steepness', tags: ['C++', 'OpenGL', 'Python'], color: '#d4a500', gitHub: 'https://github.com/audreyau/ski-vis', demo: 'https://youtu.be/9SPgaPU7nbM', preview: skivisPreview }
+  { num: '01', name: 'Deus', desc: 'Learn to read sheet music with real-time keyboard input and AI-powered feedback.', tags: ['React/Vite', 'Google Gemini API', 'Python', 'Vercel'], color: '#e6b400', category: 'web', gitHub: 'https://github.com/bobtheblb/BeaverHacks2025.git', demo: 'https://devpost.com/software/deus', play: 'https://deus-ivory.vercel.app/', preview: deusPreview },
+  { num: '02', name: 'Lavender', desc: 'Personalized sleep scheduling for shift workers, informed by sleep psychology.', tags: ['React/Vite', 'Firebase', 'Python'], color: '#9a7abf', category: 'web', demo: 'https://youtu.be/MoNmyTLVFZQ?si', play: 'https://lavender-sleep.web.app/', preview: lavenderPreview },
+  { num: '03', name: 'Drobe', desc: 'A virtual wardrobe app for documenting clothes and planning outfits.', tags: ['Swift', 'iOS'], color: '#6b9e6b', category: 'mobile', gitHub: 'https://github.com/audreyau/drobe.git', demo: 'https://youtu.be/6Ku9Wr-2rjE', preview: drobePreview },
+  { num: '04', name: 'Flavor Flick', desc: 'Discover, save, and reflect on recipes you love.', tags: ['Kotlin', 'Android'], color: '#c47a5a', category: 'mobile', gitHub: 'https://github.com/audreyau/flavor-flick', demo: 'https://youtu.be/qi3vKYFcO2Q', preview: flavorFlickPreview },
+  { num: '05', name: 'C Shell', desc: 'A Unix shell with background processes, I/O redirection, and signal handling.', tags: ['C', 'Linux'], color: '#5a8fa8', category: 'systems', gitHub: 'https://github.com/audreyau/c-shell', demo: 'https://youtu.be/T_QET5XHWoo', preview: cshellPreview },
+  { num: '06', name: 'SkiVis', desc: 'Visualize and compare ski routes by altitude and steepness', tags: ['C++', 'OpenGL', 'Python'], color: '#d4a500', category: 'graphics', gitHub: 'https://github.com/audreyau/ski-vis', demo: 'https://youtu.be/9SPgaPU7nbM', preview: skivisPreview },
+  { num: '07', name: 'Fish Animation', desc: 'A 3D fish tank simulation featuring animated fish, textured environments, and WASD navigation', tags: ['C++', 'OpenGL'], color: '#d4a500', category: 'graphics', gitHub: 'https://github.com/audreyau/CS-450/tree/03bf5cf749e88ca6ef1a2986d34d2ae288d6cfc4/finalproject', demo: 'https://youtu.be/FCa3ufzo3Y4', preview: fishPreview },
+  { num: '08', name: 'Daily Digest', desc: 'Automated daily dashboard that aggregates API data into a web digest.', tags: ['JavaScript', 'YAML', 'GitHub Actions', 'REST APIs'], color: '#d4a500', category: 'web', gitHub: 'https://github.com/audreyau/daily-digest', demo: '', play: 'https://audreyau.github.io/daily-digest/', preview: dailyDigestPreview },
+  { num: '09', name: 'EZXpiration', desc: 'A command-line tool for tracking expiration dates and reducing food waste.', tags: ['JavaScript', 'Node.js', 'Firebase'], color: '#d4a500', category: 'web', gitHub: 'https://github.com/osu-cs290-f22/final-project-ez-xperation', play: 'https://ezxpiration.vercel.app/', preview: ezXpirationPreview }
 ]
 
 const SKILLS = [
@@ -88,9 +126,21 @@ function App() {
   const [funFacts, setFunFacts] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeCat, setActiveCat] = useState('all')
+  const [showAllProjects, setShowAllProjects] = useState(false)
   const [avatarIdx, setAvatarIdx] = useState(0)
   const cursorRef = useRef(null)
+
+  const INITIAL_VISIBLE = 3
+  const filteredProjects = activeCat === 'all'
+    ? PROJECTS
+    : PROJECTS.filter((p) => p.category === activeCat)
+  const visibleProjects = (activeCat === 'all' && !showAllProjects)
+    ? filteredProjects.slice(0, INITIAL_VISIBLE)
+    : filteredProjects
+  const hasMore = activeCat === 'all' && filteredProjects.length > INITIAL_VISIBLE
   const canvasRef = useRef(null)
+
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
@@ -410,8 +460,21 @@ function App() {
             <SquigglyUnderline />
           </div>
 
+          <div className="project-filters">
+            {CATEGORIES.map((c) => (
+              <button
+                key={c.id}
+                className={`filter-btn ${activeCat === c.id ? 'active' : ''}`}
+                onClick={() => { setActiveCat(c.id); setShowAllProjects(false) }}
+              >
+                <span className="filter-icon">{c.icon}</span>
+                {c.label}
+              </button>
+            ))}
+          </div>
+
           <div className="project-grid">
-            {PROJECTS.map((p) => (
+            {visibleProjects.map((p) => (
               <article className="project-card" key={p.num}>
                 <div className="card-preview">
                   <img src={p.preview} alt="Project Preview" />
@@ -424,14 +487,42 @@ function App() {
                     {p.tags.map((t) => <span className="tag" key={t}>{t}</span>)}
                   </div>
                   <div className="card-links">
-                    <a href={p.gitHub} target="_blank" rel="noopener noreferrer">GitHub &rarr;</a>
-                    <a href={p.demo} target="_blank" rel="noopener noreferrer">{p.demo ? <>Demo &rarr;</> : ''} </a>
-                    {/* <a href={p.demo} target="_blank" rel="noopener noreferrer">Demo &rarr;</a> */}
+                    {p.gitHub && (
+                      <a href={p.gitHub} target="_blank" rel="noopener noreferrer">
+                        GitHub &rarr;
+                      </a>
+                    )}
+                    {p.demo && (
+                      <a href={p.demo} target="_blank" rel="noopener noreferrer">
+                        Demo &rarr;
+                      </a>
+                    )}
+
+                    {p.play && (
+                      <a href={p.play} target="_blank" rel="noopener noreferrer">
+                        Play &rarr;
+                      </a>
+                    )}
                   </div>
                 </div>
               </article>
             ))}
           </div>
+
+          {hasMore && (
+            <button
+              className="show-more-btn"
+              onClick={() => setShowAllProjects((prev) => !prev)}
+            >
+              {showAllProjects ? 'Show less' : `Show all ${filteredProjects.length} projects`}
+              <svg
+                className={`show-more-chevron ${showAllProjects ? 'flipped' : ''}`}
+                width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+          )}
 
           <div className="publications">
             <p className="label">Publications</p>
