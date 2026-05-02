@@ -59,15 +59,15 @@ const CATEGORIES = [
 ]
 
 const PROJECTS = [
-  { num: '01', name: 'Deus', desc: 'Learn to read sheet music with real-time keyboard input and AI-powered feedback.', tags: ['React/Vite', 'Google Gemini API', 'Python', 'Vercel'], color: '#e6b400', category: 'web', gitHub: 'https://github.com/bobtheblb/BeaverHacks2025.git', demo: 'https://devpost.com/software/deus', play: 'https://deus-ivory.vercel.app/', preview: deusPreview },
+  { num: '01', name: 'Deus', desc: 'Learn to read sheet music with real-time keyboard input and AI-powered feedback.', tags: ['React/Vite', 'Google Gemini API', 'Python', 'Vercel'], color: '#e6b400', category: 'web', code: 'https://github.com/bobtheblb/BeaverHacks2025.git', demo: 'https://devpost.com/software/deus', play: 'https://deus-ivory.vercel.app/', preview: deusPreview },
   { num: '02', name: 'Lavender', desc: 'Personalized sleep scheduling for shift workers, informed by sleep psychology.', tags: ['React/Vite', 'Firebase', 'Python'], color: '#9a7abf', category: 'web', demo: 'https://youtu.be/MoNmyTLVFZQ?si', play: 'https://lavender-sleep.web.app/', preview: lavenderPreview },
-  { num: '03', name: 'Drobe', desc: 'A virtual wardrobe app for documenting clothes and planning outfits.', tags: ['Swift', 'iOS'], color: '#6b9e6b', category: 'mobile', gitHub: 'https://github.com/audreyau/drobe.git', demo: 'https://youtu.be/6Ku9Wr-2rjE', preview: drobePreview },
-  { num: '04', name: 'Flavor Flick', desc: 'Discover, save, and reflect on recipes you love.', tags: ['Kotlin', 'Android'], color: '#c47a5a', category: 'mobile', gitHub: 'https://github.com/audreyau/flavor-flick', demo: 'https://youtu.be/qi3vKYFcO2Q', preview: flavorFlickPreview },
-  { num: '05', name: 'C Shell', desc: 'A Unix shell with background processes, I/O redirection, and signal handling.', tags: ['C', 'Linux'], color: '#5a8fa8', category: 'systems', gitHub: 'https://github.com/audreyau/c-shell', demo: 'https://youtu.be/T_QET5XHWoo', preview: cshellPreview },
-  { num: '06', name: 'SkiVis', desc: 'Visualize and compare ski routes by altitude and steepness', tags: ['C++', 'OpenGL', 'Python'], color: '#d4a500', category: 'graphics', gitHub: 'https://github.com/audreyau/ski-vis', demo: 'https://youtu.be/9SPgaPU7nbM', preview: skivisPreview },
-  { num: '07', name: 'Fish Animation', desc: 'A 3D fish tank simulation featuring animated fish, textured environments, and WASD navigation', tags: ['C++', 'OpenGL'], color: '#d4a500', category: 'graphics', gitHub: 'https://github.com/audreyau/CS-450/tree/03bf5cf749e88ca6ef1a2986d34d2ae288d6cfc4/finalproject', demo: 'https://youtu.be/FCa3ufzo3Y4', preview: fishPreview },
-  { num: '08', name: 'Daily Digest', desc: 'Automated daily dashboard that aggregates API data into a web digest.', tags: ['JavaScript', 'YAML', 'GitHub Actions', 'REST APIs'], color: '#d4a500', category: 'web', gitHub: 'https://github.com/audreyau/daily-digest', demo: '', play: 'https://audreyau.github.io/daily-digest/', preview: dailyDigestPreview },
-  { num: '09', name: 'EZXpiration', desc: 'A command-line tool for tracking expiration dates and reducing food waste.', tags: ['JavaScript', 'Node.js', 'Firebase'], color: '#d4a500', category: 'web', gitHub: 'https://github.com/osu-cs290-f22/final-project-ez-xperation', play: 'https://ezxpiration.vercel.app/', preview: ezXpirationPreview }
+  { num: '03', name: 'Drobe', desc: 'A virtual wardrobe app for documenting clothes and planning outfits.', tags: ['Swift', 'iOS'], color: '#6b9e6b', category: 'mobile', code: 'https://github.com/audreyau/drobe.git', demo: 'https://youtu.be/6Ku9Wr-2rjE', preview: drobePreview },
+  { num: '04', name: 'Flavor Flick', desc: 'Discover, save, and reflect on recipes you love.', tags: ['Kotlin', 'Android'], color: '#c47a5a', category: 'mobile', code: 'https://github.com/audreyau/flavor-flick', demo: 'https://youtu.be/qi3vKYFcO2Q', preview: flavorFlickPreview },
+  { num: '05', name: 'C Shell', desc: 'A Unix shell with background processes, I/O redirection, and signal handling.', tags: ['C', 'Linux'], color: '#5a8fa8', category: 'systems', code: 'https://github.com/audreyau/c-shell', demo: 'https://youtu.be/T_QET5XHWoo', preview: cshellPreview },
+  { num: '06', name: 'SkiVis', desc: 'Visualize and compare ski routes by altitude and steepness', tags: ['C++', 'OpenGL', 'Python'], color: '#d4a500', category: 'graphics', code: 'https://github.com/audreyau/ski-vis', demo: 'https://youtu.be/9SPgaPU7nbM', preview: skivisPreview },
+  { num: '07', name: 'Fish Animation', desc: 'A 3D fish tank simulation featuring animated fish, textured environments, and WASD navigation', tags: ['C++', 'OpenGL'], color: '#d4a500', category: 'graphics', code: 'https://github.com/audreyau/CS-450/tree/03bf5cf749e88ca6ef1a2986d34d2ae288d6cfc4/finalproject', demo: 'https://youtu.be/FCa3ufzo3Y4', preview: fishPreview },
+  { num: '08', name: 'Daily Digest', desc: 'Automated daily dashboard that aggregates API data into a web digest.', tags: ['JavaScript', 'YAML', 'GitHub Actions', 'REST APIs'], color: '#d4a500', category: 'web', code: 'https://github.com/audreyau/daily-digest', demo: '', play: 'https://audreyau.github.io/daily-digest/', preview: dailyDigestPreview },
+  { num: '09', name: 'EZXpiration', desc: 'A command-line tool for tracking expiration dates and reducing food waste.', tags: ['JavaScript', 'Node.js', 'Firebase'], color: '#d4a500', category: 'web', code: 'https://github.com/osu-cs290-f22/final-project-ez-xperation', play: 'https://ezxpiration.vercel.app/', preview: ezXpirationPreview }
 ]
 
 const SKILLS = [
@@ -397,7 +397,7 @@ function App() {
                 <SquigglyUnderline />
               </div>
               <p>
-                I'm a software engineer with a focus on human-computer interaction. Now working as an Site Reliability Engineer at Nike, I focus on creating and maintaining dependable systems with thoughtful user experiences.
+                I'm a software engineer with a focus on human-computer interaction. Now working as a Site Reliability Engineer at Nike, I focus on creating and maintaining dependable systems with thoughtful user experiences.
               </p>
               <p>
                 I care about building technology that's intuitive, accessible, and fun to use.
@@ -487,9 +487,9 @@ function App() {
                     {p.tags.map((t) => <span className="tag" key={t}>{t}</span>)}
                   </div>
                   <div className="card-links">
-                    {p.gitHub && (
-                      <a href={p.gitHub} target="_blank" rel="noopener noreferrer">
-                        GitHub &rarr;
+                    {p.code && (
+                      <a href={p.code} target="_blank" rel="noopener noreferrer">
+                        Code &rarr;
                       </a>
                     )}
                     {p.demo && (
