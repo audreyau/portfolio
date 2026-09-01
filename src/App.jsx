@@ -123,6 +123,7 @@ function SquigglyUnderline() {
 
 function App() {
   const [typedText, setTypedText] = useState('')
+  const [heroReady, setHeroReady] = useState(false)
   const [showCursor, setShowCursor] = useState(true)
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark')
   const [funFacts, setFunFacts] = useState(false)
@@ -148,6 +149,10 @@ function App() {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
     localStorage.setItem('theme', darkMode ? 'dark' : 'light')
   }, [darkMode])
+
+  useEffect(() => {
+    document.fonts.load('1rem "Scratchy Lemon"').then(() => setHeroReady(true))
+  }, [])
 
   useEffect(() => {
     const ids = ['hero', 'about', 'projects', 'experience', 'contact']
@@ -350,10 +355,13 @@ function App() {
           ))}
         </div>
 
-        <div className="hero-center">
+        <div className={`hero-center ${heroReady ? 'ready' : ''}`}>
           <img
             src={avatar}
             alt="Audrey Ekstrom"
+            width={255}
+            height={255}
+            fetchPriority="high"
             className="hero-avatar"
             onClick={popConfetti}
           />

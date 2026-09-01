@@ -212,6 +212,12 @@
     gap: px;
     position: relative;
     z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hero-center.ready {
+    opacity: 1;
   }
   
   .hero-avatar {
