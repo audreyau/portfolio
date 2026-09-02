@@ -407,7 +407,7 @@ function App() {
                 <SquigglyUnderline />
               </div>
               <p>
-                I'm a software engineer with a focus on human-computer interaction. Now working as a Site Reliability Engineer at Nike, I focus on creating and maintaining dependable systems with thoughtful user experiences.
+                I'm a software engineer with a focus on human-computer interaction. Now working as a software engineer at Nike, I focus on creating and maintaining dependable systems with thoughtful user experiences.
               </p>
               <p>
                 I care about building technology that's intuitive, accessible, and fun to use.
@@ -635,9 +635,9 @@ function App() {
               <div className="timeline-marker" />
               <div className="timeline-content">
                 <span className="timeline-date">Aug 2025 &mdash; Present</span>
-                <h3>Site Reliability Engineer</h3>
+                <h3>Software Engineer 1</h3>
                 <p className="timeline-company">Nike</p>
-                <p>Supported all frontend experiences on Nike.com and Nike App, maintaining reliability and observability tooling (dashboards, automation, alerting, and Slack bots), troubleshooting frontend bugs across platforms, and sustaining 99.99% service availability even during peak holiday traffic.</p>
+                <p>Supported all frontend experiences on Nike.com, Nike App, and SNKRS web, maintaining reliability and observability tooling (dashboards, automation, alerting, and Slack bots), troubleshooting frontend bugs across platforms, and sustaining 99.99% service availability even during peak holiday traffic.</p>
                 <div className="tag-row">
                   <span className="tag">AWS</span>
                   <span className="tag">Splunk/SignalFX</span>
